@@ -18,7 +18,7 @@ mot_a_deviner = random.choice(liste_mots)
 # Initialiser les variables du jeu
 lettres_trouvees = []
 lettres_manquees = []
-nb_essais = 9
+essaies = 9
 
 def penduTick(trouvenomvariable, event = None) : #Le code sur lequel Aaron ta aidé éssai de comprendre quand meme
 
