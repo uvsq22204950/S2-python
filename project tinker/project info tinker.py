@@ -20,26 +20,26 @@ lettres_trouvees = []
 lettres_manquees = []
 nb_essais = 9
 
-def penduTick(self, event = None) : #Le code sur lequel Aaron ta aidé éssai de comprendre quand meme
+def penduTick(trouvenomvariable, event = None) : #Le code sur lequel Aaron ta aidé éssai de comprendre quand meme
 
-        if self.essaies > 0 and not self.win: #Si on a encore des essaies et qu'on n'a pas encore gagné
+        if trouvenomvariable.essaies > 0 and not trouvenomvariable.win: #Si on a encore des essaies et qu'on n'a pas encore gagné
             
             #On récupère ce que le joueur à entrée
-            self.congratsLabel.configure(text = "")
-            guess = self.guessEntry.get()
-            self.guessEntry.delete(0, len(guess))
+            trouvenomvariable.congratsLabel.configure(text = "")
+            guess = trouvenomvariable.guessEntry.get()
+            trouvenomvariable.guessEntry.delete(0, len(guess))
             if len(guess) != 1 :
                 guess = ""
-                self.congratsLabel.configure(text = "Input only 1 character")
+                trouvenomvariable.congratsLabel.configure(text = "Input only 1 character")
             for c in guess.lower() : #On vérifie si la lettre correspond à une lettre du mot (les lettres qui correspondent ne font pas perdre d'essaies)
-                #On peut rentré plusieurs lettres d'un coup: si le joueur rentre "abcdefg", sa va regarder pour toutes ces lettre si elle est dans le mot.
+                #On peut rentré plusieurs lettres d'un coup: si le joueur rentre "lfpoeqys", sa va regarder pour toutes ces lettre si elle est dans le mot.
                 #On perd aussi plus d'essaies si on met plein de lettres qui ne sont pas dans le mot.
-                if c in self.motC.lower() :
-                    if c not in self.lettresTrouves : #Si la lettre est dans le mot, 
-                        self.lettresTrouves.append(c)
+                if c in trouvenomvariable.motC.lower() :
+                    if c not in trouvenomvariable.lettresTrouves : #Si la lettre est dans le mot, 
+                        trouvenomvariable.lettresTrouves.append(c)
                 else :
                     try :
                         int(c)
                     except :
-                        self.essaies -= 1 #Mauvaise lettre ? Un essaie en moins et on dessine le pendu un peu plus
-                        self.drawNext()
+                        trouvenomvariable.essaies -= 1 #Mauvaise lettre ? Un essaie en moins et on dessine le pendu un peu plus
+                        trouvenomvariable.drawNext()
