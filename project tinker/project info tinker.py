@@ -20,7 +20,7 @@ lettres_trouvees = []
 lettres_manquees = []
 nb_essais = 9
 
-def penduTick(self, event = None) : #Le code sur lequel Aaron ta aidé aissai de comprendre quand meme
+def penduTick(self, event = None) : #Le code sur lequel Aaron ta aidé éssai de comprendre quand meme
 
         if self.essaies > 0 and not self.win: #Si on a encore des essaies et qu'on n'a pas encore gagné
             
